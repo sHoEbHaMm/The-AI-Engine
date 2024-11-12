@@ -1,4 +1,4 @@
-#AI Behaviors:
+*Movement Behaviors*:
 
 KineMatic motion along the border of the window:
 ![](https://github.com/sHoEbHaMm/The-AI-Engine/blob/main/Media/Kinematic.gif)
@@ -7,7 +7,7 @@ Dynamic Seek:
 Dynamic Arrive:
 ![](https://github.com/sHoEbHaMm/The-AI-Engine/blob/main/Media/Arrive.gif)
 
-Pathfinding:
+*Pathfinding*:
 
 Dijkstra’s vs A*
 1. Runtime:
@@ -40,23 +40,23 @@ Dijkstra’s vs A*
     ![image](https://github.com/user-attachments/assets/41ba07f2-f1d6-46d5-b167-8b7562657848)
 
 7. Heuristics:
-Manhattan Distance Heuristic:
-Description: The Manhattan distance heuristic calculates the distance between two nodes on a grid by summing the absolute differences in their row and column indices. It measures the shortest distance between two points when only horizontal and vertical movements are allowed.
-Admissibility: The Manhattan distance heuristic is admissible because it never overestimates the actual cost to reach the goal. It always underestimates or equals the true shortest path distance, as it calculates the distance by moving only along grid lines.
-Consistency: The Manhattan distance heuristic is consistent because it satisfies the triangle inequality property. In other words, the estimated cost from the start node to any successor node plus the estimated cost from that successor node to the goal node is never greater than the estimated cost from the start node directly to the goal node.
-Performance: The Manhattan distance heuristic tends to perform well in tile-based grids or environments where movement is constrained to grid lines. It guides the A* algorithm efficiently towards the goal by considering only horizontal and vertical movements.
+*Manhattan Distance Heuristic*:
+- Description: The Manhattan distance heuristic calculates the distance between two nodes on a grid by summing the absolute differences in their row and column indices. It measures the shortest distance between two points when only horizontal and vertical movements are allowed.
+- Admissibility: The Manhattan distance heuristic is admissible because it never overestimates the actual cost to reach the goal. It always underestimates or equals the true shortest path distance, as it calculates the distance by moving only along grid lines.
+- Consistency: The Manhattan distance heuristic is consistent because it satisfies the triangle inequality property. In other words, the estimated cost from the start node to any successor node plus the estimated cost from that successor node to the goal node is never greater than the estimated cost from the start node directly to the goal node.
+- Performance: The Manhattan distance heuristic tends to perform well in tile-based grids or environments where movement is constrained to grid lines. It guides the A* algorithm efficiently towards the goal by considering only horizontal and vertical movements.
 
-Euclidean Distance Heuristic:
-Description: The Euclidean distance heuristic calculates the straight-line distance between two nodes on a grid using the Pythagorean theorem. It measures the shortest distance between two points in a straight line, regardless of obstacles or grid lines.
-Admissibility: The Euclidean distance heuristic is admissible because it never overestimates the actual cost to reach the goal. However, it may overestimate the true shortest path distance if obstacles prevent straight-line movement.
-Consistency: The Euclidean distance heuristic is not always consistent because it may violate the triangle inequality property. It can lead to suboptimal paths or even infinite loops in certain cases where the heuristic does not accurately reflect the true cost of movement.
-Performance: The Euclidean distance heuristic can perform well in environments where obstacles are sparse, and the shortest path is relatively unobstructed. However, it may lead to suboptimal paths or inefficiencies when obstacles are present or movement is constrained to grid lines.
+*Euclidean Distance Heuristic*:
+- Description: The Euclidean distance heuristic calculates the straight-line distance between two nodes on a grid using the Pythagorean theorem. It measures the shortest distance between two points in a straight line, regardless of obstacles or grid lines.
+- Admissibility: The Euclidean distance heuristic is admissible because it never overestimates the actual cost to reach the goal. However, it may overestimate the true shortest path distance if obstacles prevent straight-line movement.
+- Consistency: The Euclidean distance heuristic is not always consistent because it may violate the triangle inequality property. It can lead to suboptimal paths or even infinite loops in certain cases where the heuristic does not accurately reflect the true cost of movement.
+- Performance: The Euclidean distance heuristic can perform well in environments where obstacles are sparse, and the shortest path is relatively unobstructed. However, it may lead to suboptimal paths or inefficiencies when obstacles are present or movement is constrained to grid lines.
 
 When comparing the performance of A* algorithm with different heuristics in a tile graph:
 -	The Manhattan distance heuristic tends to perform well in tile-based grids or environments with grid-like movement constraints. It provides accurate estimates of the remaining distance to the goal and guides the search efficiently towards the goal.
 -	The Euclidean distance heuristic may perform well in open environments where obstacles are sparse and movement is not constrained to grid lines. However, it may lead to suboptimal paths or inefficiencies in tile-based grids with obstacles or grid-like movement constraints.
   
-Improvements:
+*Improvements*:
 I did the A* search in my own way, not following the pseudo code so I did not do a lot of things correctly:
 -	Instead of a linear search, employing a binary search or hash table lookup can significantly improve the efficiency of node retrieval from the open/closed list in pathfinding algorithms.
 -	Minimizing the number of nested for loops can enhance the performance and readability of the code, making it more concise and efficient.
